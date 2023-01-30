@@ -10,13 +10,23 @@ it("redirects on the results page", async ({ browser, currentTest, ...rest }) =>
     await browser.epic(currentTest.id(), "my_epic")
 
 	expect(browser.url).not.eq("https://www.startpage.com/")
+
+	await browser.feature(currentTest.id(),"Integration with Hermione test framework")
+	await browser.story(currentTest.id(),"Positive tests")
+	await browser.label(currentTest.id(),"service", "Search engine idle")
+
 });
 
 it("shows some results items", async ({ browser, currentTest }) => {
+	
 	const items = await browser.$$(".w-gl__result")
     const screenshot = await browser.takeScreenshot()
-
-    await browser.attach(currentTest.id(), screenshot, "image/png")
+	
+	await browser.feature(currentTest.id(),"Integration with Hermione test framework")
+	await browser.story(currentTest.id(),"Positive tests")
+	await browser.label(currentTest.id(),"service", "Search engine")
+    
+	await browser.attach(currentTest.id(), screenshot, "image/png")
 
 	expect(items.length).not.eq(0)
 });
