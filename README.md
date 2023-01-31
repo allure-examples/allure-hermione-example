@@ -1,6 +1,6 @@
 # Integration with Hermione Framework
 
-example of the integration with Hermione framework
+example of the integration with [Hermione framework](https://github.com/gemini-testing/hermione)
 
 ## Execution
 
